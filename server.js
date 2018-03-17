@@ -32,7 +32,7 @@ hbs.registerHelper('screamIt', text => {
 app.get('/', (req, res) => {
     res.render('home.hbs', {
         pageTitle: 'Home Page',
-        welcomeMessage: "Dio porco",
+        welcomeMessage: "Uhm",
     })
 });
 
@@ -42,8 +42,14 @@ app.get('/about', (req, res) => {
     })
 });
 
+app.get('/portfolio', (req, res) => {
+    res.render('portfolio.hbs', {
+        pageTitle: 'Portfolio',
+    })
+});
+
 app.get('/bad', (req, res) => {
-    res.sendStatus(500).send('Uhm');
+    res.sendStatus(500);
 })
 
 app.listen(port, () => {
